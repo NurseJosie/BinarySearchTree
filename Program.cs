@@ -79,11 +79,24 @@ namespace BinarySearchTree
             {
                 throw new NotImplementedException();
             }
-
-            public bool Exists(T value)
+			// Returns true if an object that is equal to value exists in the tree
+			// Uses the IComparable<T> interface. x.CompareTo(y) == 0
+			public bool Exists(T value)
             {
-                throw new NotImplementedException();
-            }
+			//	if (Root.Data == null)
+			//	{
+			//		return false;
+			//	}
+			//	else if (Root.Data == value)
+			//	{
+			//		return true;
+			//	}
+			//	else if (value.CompareTo(Root.data) < 0)
+			//	{
+			//		contains(value, ............................)
+	
+			//}
+			}
 
             // lägg till ett valfritt värde. om högre än parent- höger, om lägre- vänster. om lika värde som parent- vänster.
             public void Insert(T value)
@@ -108,29 +121,6 @@ namespace BinarySearchTree
             }
 	}
 
-	// Returns true if an object that is equal to value exists in the tree
-	// Uses the IComparable<T> interface. x.CompareTo(y) == 0
-	public bool Exists(T value)
-	{
-            if (Root.Data == null)
-            {
-				return false;
-            }
-			else if(Root.Data == value)
-            {
-				return true;
-            }
-			else if(value.CompareTo(Root.data) < 0)
-            {
-				contains(value, ............................)
-            }
-	}
-
-	// Returns the number of objects currently in the tree
-	public int Count()
-	{
-		throw new NotImplementedException();
-	}
 }
 
 	public class Node<T>
