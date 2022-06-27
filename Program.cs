@@ -1,12 +1,12 @@
-﻿
+﻿using static BinarySearchTree.BST;
+
+//BinarySearchTree bts = new BinarySearchTree();
 
 //bool run = true;
 
-//BST BinarySearchTree = new BST();
-
 //while (run)
 //  {
-  
+
 //    Console.WriteLine("BINARY SEARCH TREE");
 //    Console.WriteLine("1. Add a number");
 //    Console.WriteLine("2. Search for a number");
@@ -46,29 +46,16 @@ namespace BinarySearchTree
 			// Remember: the most efficient tree is a balanced tree. A balanced tree has the same (or as close as possible to) amount of nodes on the left as on the right.
 
 			// Inserts a new value to the tree
-			public void Insert(T value)
-			{
-				if (Root == null)
-				{
-					Root = new Node<T>(value);
-				}
-				else if (Root.Data.CompareTo(value) > 0) //IComparable, om root > value
-				{
-					node.LeftChild = new Node<T>(value);
-				}
-				else if (Root.Data.CompareTo(value) < 0)
-				{
-					node.RightChild = new Node<T>(value);
-				}
-			}
-		}
-
+			public void Insert(T value);
+		
 		// Returns true if an object that is equal to value exists in the tree
 		// Uses the IComparable<T> interface. x.CompareTo(y) == 0
 		public bool Exists(T value);
+    
 
 		// Returns the number of objects currently in the tree
 		public int Count();
+      
 	}
 	//public interface BST_VG<T> where T : IComparable<T>
 	//{
@@ -87,7 +74,64 @@ namespace BinarySearchTree
 	public class BinarySearchTree<T> : BST_G<T> where T : IComparable<T>
 	{
 		private Node<T>? Root = null;
+
+            public int Count()
+            {
+                throw new NotImplementedException();
+            }
+
+            public bool Exists(T value)
+            {
+                throw new NotImplementedException();
+            }
+
+            // lägg till ett valfritt värde. om högre än parent- höger, om lägre- vänster. om lika värde som parent- vänster.
+            public void Insert(T value)
+		{
+                Node<T> node = new Node<T>(value); //?
+
+                if (Root == null) // om det inte finns ngt värde i trädet, gör value till root.
+                {
+                    Root = new Node<T>(value);
+                }
+                else if (Root.Data.CompareTo(value) > 0) //IComparable, om root > value. 
+                {
+                    node.LeftChild = new Node<T>(value);
+                }
+                else if (Root.Data.CompareTo(value) < 0)
+                {
+                    node.RightChild = new Node<T>(value);
+                }
+
+                //rekursivt?! :o
+
+            }
 	}
+
+	// Returns true if an object that is equal to value exists in the tree
+	// Uses the IComparable<T> interface. x.CompareTo(y) == 0
+	public bool Exists(T value)
+	{
+            if (Root.Data == null)
+            {
+				return false;
+            }
+			else if(Root.Data == value)
+            {
+				return true;
+            }
+			else if(value.CompareTo(Root.data) < 0)
+            {
+				contains(value, ............................)
+            }
+	}
+
+	// Returns the number of objects currently in the tree
+	public int Count()
+	{
+		throw new NotImplementedException();
+	}
+}
 
 	public class Node<T>
 	{
