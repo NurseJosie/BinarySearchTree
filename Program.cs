@@ -52,9 +52,9 @@ bts.Insert(12);
 bts.Insert(43);
 bts.Insert(29);
 bts.Insert(9);
-bts.Insert(3);
+bts.Insert(1);
 
-Console.WriteLine("Number of objects in tree: " + bts.Count()); //8
+Console.WriteLine("Number of objects in tree: " + bts.Count()); //16
 Console.WriteLine("Does number 99 exist? " + bts.Exists(99)); //true
 Console.WriteLine("Does number 3 exist? " + bts.Exists(3)); //false
 //Console.WriteLine("Balance of tree: " + bts.GetBalance()); // ligger i node.cs, behövs för G???
