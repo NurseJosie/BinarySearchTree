@@ -1,5 +1,4 @@
-﻿
-namespace BinarySearchTree
+﻿namespace BinarySearchTree
 {
     public class BinarySearchTree<T> : BST_G<T> where T : IComparable<T>
     {
@@ -21,7 +20,6 @@ namespace BinarySearchTree
             {
                 if (currentNode.Data.CompareTo(value) > 0) // mindre än parent, lägg till vänster
                 {
-                    
                     if (currentNode.LeftChild == null) //kolla om man kommit till en tom nod
                     {
                         currentNode.LeftChild = new Node<T>(value); //skapa ny nod
@@ -46,6 +44,7 @@ namespace BinarySearchTree
                 }
             }
         }
+
         //-----------------------------------------------------------
         public bool Exists(T value)
         {
@@ -66,18 +65,20 @@ namespace BinarySearchTree
                 }
                 else if (currentNode.Data.CompareTo(value) < 0) //eller kolla höger gren
                 {
-                    currentNode = currentNode.RightChild; 
+                    currentNode = currentNode.RightChild;
                 }
             }
             return false; // värdet hittades inte
         }
+
         //-----------------------------------------------------------
         private int count = 0;
 
-        public int Count() 
-        { 
+        public int Count()
+        {
             return count; //returnerar count från insert-metoden
         }
+
         //-----------------------------------------------------------
     }
 }
